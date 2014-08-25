@@ -21,11 +21,12 @@
     "url": "https://github.com/dkarter/NetflixScraperAPI/issues"
   },
   "homepage": "https://github.com/dkarter/NetflixScraperAPI",
+  "scripts": {
+    "preinstall": "npm i -g casperjs"
+  },
   "dependencies": {
     "express": "latest",
-    "phantomjs": "^1.9.7-15",
     "request": "latest",
-    "scraperjs": "^0.2.2",
     "tough-cookie": "latest"
   }
 }
