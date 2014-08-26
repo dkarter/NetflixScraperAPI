@@ -40,7 +40,8 @@ function readCookieFile () {
 function serveAPI (cookieJar) {
 	//configure roots and serve app
 	var app = express();
-	
+	app.set('port', (process.env.PORT || 5000));
+
 	app.get('/autocomplete/:query', function (req, res) {
 		var autocompleteAPI = apiUrl + '/desktop/search/autocomplete?term=';
 		autocompleteAPI += req.params.query;
@@ -59,9 +60,9 @@ function serveAPI (cookieJar) {
 
 	});
 
-	app.listen('8080');
-
-	console.log('go to http://localhost:8080/autocomplete');
+	app.listen(app.get('port'), function() {
+  		console.log("Netflix Scraper is running at localhost:" + app.get('port') + "/autocomplete");
+	});
 
 	exports = module.exports = app;	
 }
