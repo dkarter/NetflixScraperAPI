@@ -1,32 +1,31 @@
 {
-  "name": "NetflixScraperAPI",
-  "version": "0.0.1",
-  "description": "Scrapes Netflix search page using a query provided by the user and returns the results as json",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dkarter/NetflixScraperAPI.git"
-  },
-  "keywords": [
-    "Netflix",
-    "scraper",
-    "api"
-  ],
-  "author": "Dorian Karter",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dkarter/NetflixScraperAPI/issues"
-  },
-  "homepage": "https://github.com/dkarter/NetflixScraperAPI",
-  "scripts": {
-    "preinstall": "npm i -g casperjs"
-  },
-  "dependencies": {
-    "express": "latest",
-    "request": "latest",
-    "tough-cookie": "latest"
-  }
+	"name": "NetflixScraperAPI",
+	"version": "0.0.1",
+	"description": "Scrapes Netflix search page using a query provided by the user and returns the results as json",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dkarter/NetflixScraperAPI.git"
+	},
+	"keywords": [
+		"Netflix",
+		"scraper",
+		"api"
+	],
+	"author": "Dorian Karter",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dkarter/NetflixScraperAPI/issues"
+	},
+	"homepage": "https://github.com/dkarter/NetflixScraperAPI",
+	"dependencies": {
+		"casperjs": "latest",
+		"phantomjs": "latest",
+		"express": "latest",
+		"request": "latest",
+		"tough-cookie": "latest"
+	}
 }
