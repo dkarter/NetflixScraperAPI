@@ -4,20 +4,44 @@ var tough = require('tough-cookie');
 var sys = require('sys');
 var exec = require('child_process').exec;
 var fs = require('fs');
+var prompt = require('prompt');
 
 var cookieFile = 'netflix-cookies.txt';
-var noop = function () {};
+var credentialsFile = 'credentials.json';
 var apiDomain = 'api-global.netflix.com';
 var apiUrl = 'http://' + apiDomain;
 
-//TODO: add refresh flag to commandline - check it here and erase existing cookie
-if (!fs.existsSync(cookieFile)) {
-	var netflixLogin = exec('casperjs netflix-login.js', function (error, stdout, stderr) {
+var noop = function () {};
+
+function init () {
+	if (!fs.existsSync(cookieFile)) {
+		
+		if (!fs.existsSync(credentialsFile)) {
+			writeCredentialsFile(function () {	runLoginImitator();	});
+		} else {
+			runLoginImitator();
+		}
+
+	} else {
+		readCookieFile();
+	}
+}
+
+function writeCredentialsFile (callback) {
+	prompt.get(['username', 'password'], function (err, result) {
+			if (err) return callback && callback(err);
+			fs.writeFile('credentials.json', JSON.stringify(result), function(err){
+				if (err) return callback && callback(err);
+				return callback && callback(null);
+			});
+	});
+}
+function runLoginImitator () {
+	//casper will imitate a login using phantomjs headless webkit
+	exec('casperjs netflix-login.js', function (error) {
 		if (error) throw error;
 		readCookieFile();
 	});
-} else {
-	readCookieFile();
 }
 
 function readCookieFile () {
@@ -67,3 +91,4 @@ function serveAPI (cookieJar) {
 	exports = module.exports = app;	
 }
 
+init();
