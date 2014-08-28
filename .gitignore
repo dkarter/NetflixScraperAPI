@@ -28,5 +28,5 @@ node_modules
 .lock-wscript
 
 #App specific
-# credentials.json
+credentials.json
 netflix-cookies.txt
