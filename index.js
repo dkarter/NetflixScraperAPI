@@ -80,9 +80,9 @@ function serveAPI (cookieJar) {
 		
 		}, function (error, response, json) {
 			if (error) 
-				res.send(error);
+				res.status(200).send(error);
 			else
-				res.json(json);
+				res.status(500).json({error: error});
 		});
 
 	});
