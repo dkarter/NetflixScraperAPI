@@ -7,7 +7,7 @@ read username
 echo "Type your Netflix user password:"
 read password
 
-cat > credentials.json << endoffile
+cat > /app/credentials.json << endoffile
 {
 	"user": "$username",
 	"pass": "$password"
