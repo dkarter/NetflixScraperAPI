@@ -50,6 +50,9 @@ function readCookieFile () {
 		var jar = new tough.CookieJar();
 
 		var cookies = JSON.parse(data);
+		
+		console.log(cookies);
+
 		for (var i = 0; i < cookies.length; i++) {
 			cookies[i].key = cookies[i].name;
 			cookies[i].domain = apiDomain;
