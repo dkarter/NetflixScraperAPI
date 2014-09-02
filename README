@@ -1,0 +1,33 @@
+#Instructions
+
+##Running
+
+```
+node index.js
+```
+
+##Deployment - Dokku
+
+1. Add remote to your cloned git repository
+2. Push
+3. The installation process will ask you for a user name and password once
+4. After the first install your cookie should be preserved and there should be no reason to the process again.
+
+##Accessing
+
+From your browser navigate to:
+
+```
+http://localhost:5000/autocomplete/star%20trek
+```
+
+You will get a json string containing completions for your query
+
+
+##Contributing
+
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
