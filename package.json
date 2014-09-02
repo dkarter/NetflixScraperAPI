@@ -28,5 +28,8 @@
     "prompt": "^0.2.13",
     "request": "latest",
     "tough-cookie": "latest"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1"
   }
 }
