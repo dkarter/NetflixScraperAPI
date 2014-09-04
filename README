@@ -1,3 +1,14 @@
+# ===================================================
+# Netflix Scraper API
+# Developed by: Dorian Karter
+# Website: https://github.com/dkarter/NetflixScraperAPI
+# Use example (Alfred Workflow): https://github.com/dkarter/AlfredNetflixSearchWorkflow
+# License: MIT
+# Disclaimer: I am not connected and or affiliated with Netflix, this code was written 
+# purely for educational purposes and with no other intent, warranty or purpose. 
+# Use at your own risk and responsiblity.
+# ===================================================
+
 #Instructions
 
 ##Running
@@ -8,10 +19,12 @@ node index.js
 
 ##Deployment - Dokku
 
-1. Add remote to your cloned git repository
+1. Add the dokku remote to your cloned git repository
 2. Push
-3. The installation process will ask you for a user name and password once
-4. After the first install your cookie should be preserved and there should be no reason to the process again.
+3. The installation process will ask you for your netflix user name and password once
+4. After the first run your cookie should be saved and the server will not ask you for your credentials again.
+--
+Alternatively fill in your credentials in the credentials.json file for silent run.
 
 ##Accessing
 
@@ -31,3 +44,4 @@ You will get a json string containing completions for your query
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
 5. Create new Pull Request
+
